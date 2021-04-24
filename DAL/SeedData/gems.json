@@ -1,0 +1,186 @@
+[
+    {
+        "Name": "Inel din aur galben cu pietre multicolor",
+        "Description": "Inel aur galben 14K (inel cu pietre multicolor). Gramaj: 1,60 Gr, marime: 57",
+        "Price": 432,
+        "Picture": "images/gems/I1.jpeg",
+        "GemTypeId": 1,
+        "GemKaratId": 1
+    },
+    {
+        "Name": "Inel din aur galben cu onix",
+        "Description": "Inel aur galben 14K (inel cu onix). Gramaj: 1,40 Gr, marime: 51",
+        "Price": 378,
+        "Picture": "images/gems/I2.jpeg",
+        "GemTypeId": 1,
+        "GemKaratId": 1
+    },
+    {
+        "Name": "Inel din aur galben cu turcoaz",
+        "Description": "Inel aur galben 14K (inel cu turcoaz). Gramaj: 3,17 Gr, marime: 55",
+        "Price": 856,
+        "Picture": "images/gems/I3.jpeg",
+        "GemTypeId": 1,
+        "GemKaratId": 1
+    },
+    {
+        "Name": "Inel din aur galben cu zirconiu",
+        "Description": "Inel aur galben 14K (inel cu zirconiu). Gramaj: 6,08 Gr, marime: 57",
+        "Price": 1580,
+        "Picture": "images/gems/I4.jpeg",
+        "GemTypeId": 1,
+        "GemKaratId": 1
+    },
+    {
+        "Name": "Inel din aur galben cu flori si pietre",
+        "Description": " Inel aur galben 14K (inel cu floare si pietre albastre). Gramaj: 5,14 Gr, marime: 56",
+        "Price": 1388,
+        "Picture": "images/gems/I5.jpeg",
+        "GemTypeId": 1,
+        "GemKaratId": 1
+    },
+    {
+        "Name": "Inel rotund din aur galben cu prietre negre",
+        "Description": "Inel aur galben 14K (inel rotund cu pietre negre). Gramaj: 3,72 Gr, marime: 57",
+        "Price": 1000,
+        "Picture": "images/gems/I6.jpeg",
+        "GemTypeId": 1,
+        "GemKaratId": 1
+    },
+    {
+        "Name": "Inel din aur galben cu pietre multicolor",
+        "Description": "Inel aur alb 14K (inel cu zirconiu). Gramaj: 1,51 Gr, marime: 54",
+        "Price": 408,
+        "Picture": "images/gems/I7.jpeg",
+        "GemTypeId": 1,
+        "GemKaratId": 1
+    },
+    {
+        "Name": "Lant din aur galben cu stele",
+        "Description": "Lant aur galben 14K (lant cu stele). Gramaj: 3,79 Gr, marime: 44 cm",
+        "Price": 1024,
+        "Picture": "images/gems/L1.jpeg",
+        "GemTypeId": 2,
+        "GemKaratId": 1
+    },
+    {
+        "Name": "Lant din aur galben cu stele",
+        "Description": "Lant aur galben 14K (lant cu banuti). Gramaj: 2,11 Gr, marime: 45 cm",
+        "Price": 570,
+        "Picture": "images/gems/L2.jpeg",
+        "GemTypeId": 2,
+        "GemKaratId": 1
+    },
+    {
+        "Name": "Lant din aur galben cu animalute",
+        "Description": "Lant aur galben 14K (lant cu animalute). Gramaj: 2,98 Gr, marime: 45 cm",
+        "Price": 805,
+        "Picture": "images/gems/L3.jpeg",
+        "GemTypeId": 2,
+        "GemKaratId": 1
+    },
+    {
+        "Name": "Bratara din aur galben in stil pandora",
+        "Description": "Bratara aur galben 14K (bratara stil pandora). Gramaj: 4,74 Gr, marime: 20 cm",
+        "Price": 1280,
+        "Picture": "images/gems/B1.jpeg",
+        "GemTypeId": 3,
+        "GemKaratId": 1
+    },
+    {
+        "Name": "Bratara din aur galben cu fluturi",
+        "Description": "Bratara aur galben 14K (bratara cu fluturi). Gramaj: 2,75 Gr, marime: 19 cm",
+        "Price": 740,
+        "Picture": "images/gems/B2.jpeg",
+        "GemTypeId": 3,
+        "GemKaratId": 1
+    },
+    {
+        "Name": "Bratara fixa din aur galben",
+        "Description": "Bratara aur galben 14K (bratara fixa). Gramaj: 6,79 Gr, marime: universala",
+        "Price": 1834,
+        "Picture": "images/gems/B3.jpeg",
+        "GemTypeId": 3,
+        "GemKaratId": 1
+    },
+    {
+        "Name": "Bratara din aur alb hexagon",
+        "Description": "Bratara aur alb 14K (bratara cu hexagon). Gramaj: 6,10 Gr, marime: 18 cm",
+        "Price": 1650,
+        "Picture": "images/gems/B4.jpeg",
+        "GemTypeId": 3,
+        "GemKaratId": 1
+    },
+    {
+        "Name": "Bratara din aur galben cu Camee",
+        "Description": "Bratara aur galben 14K (bratara cu Camee). Gramaj: 9,42 Gr, marime: 20 cm",
+        "Price": 2540,
+        "Picture": "images/gems/B5.jpeg",
+        "GemTypeId": 3,
+        "GemKaratId": 1
+    },
+    {
+        "Name": "Bratara din aur galben cu pietre verzi",
+        "Description": "Bratara aur galben 14K (Bratara tenis cu pietre verzi). Gramaj: 4,88 Gr, marime: 19 cm",
+        "Price": 1318,
+        "Picture": "images/gems/B6.jpeg",
+        "GemTypeId": 3,
+        "GemKaratId": 1
+    },
+    {
+        "Name": "Cercei din aur galben cu bumbi cu pietre albe",
+        "Description": "Cercei aur galben 14K (cercei bumbi cu pietre albe). Gramaj: 1,71 Gr",
+        "Price": 460,
+        "Picture": "images/gems/C1.jpeg",
+        "GemTypeId": 4,
+        "GemKaratId": 1
+    },
+    {
+        "Name": "Cercei din aur galben cu cruciulite",
+        "Description": "Cercei aur galben 14K (cercei cu cruciulite). Gramaj: 1,64 Gr",
+        "Price": 440,
+        "Picture": "images/gems/C2.jpeg",
+        "GemTypeId": 4,
+        "GemKaratId": 1
+    },
+    {
+        "Name": "Cercei pomul vieții din aur galben cu pietre colorate",
+        "Description": "Cercei aur galben 14K (cercei pomul vietii cu pietre colorate). Gramaj: 1,90 Gr",
+        "Price": 510,
+        "Picture": "images/gems/C3.jpeg",
+        "GemTypeId": 4,
+        "GemKaratId": 1
+    },
+    {
+        "Name": "Cercei pomul vieții din aur galben",
+        "Description": "Cercei aur galben 14K (cercei pomul vieții). Gramaj: 3,68 Gr",
+        "Price": 990,
+        "Picture": "images/gems/C4.jpeg",
+        "GemTypeId": 4,
+        "GemKaratId": 1
+    },
+    {
+        "Name": "Cercei din aur galben cu pietre albe",
+        "Description": "Cercei aur alb 14K (cercei bumbi cu pietre albe). Gramaj: 2,70 Gr",
+        "Price": 730,
+        "Picture": "images/gems/C5c.jpeg",
+        "GemTypeId": 4,
+        "GemKaratId": 1
+    },
+    {
+        "Name": "Pandantiv din aur galben cu cruce",
+        "Description": "Pandantiv aur galben 14K (pandantiv cruciuliță). Gramaj: 1,66 Gr",
+        "Price": 450,
+        "Picture": "images/gems/P1.jpeg",
+        "GemTypeId": 5,
+        "GemKaratId": 1
+    },
+    {
+        "Name": "Pandantiv din aur galben cu floare",
+        "Description": "Pandantiv aur galben 14K (pandantiv floare). Gramaj: 1,78 Gr",
+        "Price": 480,
+        "Picture": "images/gems/P2.jpeg",
+        "GemTypeId": 5,
+        "GemKaratId": 1
+    }
+]

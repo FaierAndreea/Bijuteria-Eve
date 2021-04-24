@@ -1,0 +1,22 @@
+[
+    {
+      "Id": 1,
+      "Name": "Inele"
+    },
+    {
+      "Id": 2,
+      "Name": "Lanturi"
+    },
+    {
+      "Id": 3,
+      "Name": "Bratari"
+    },
+    {
+        "Id": 4,
+        "Name": "Cercei"
+    },
+    {
+        "Id": 5,
+        "Name": "Pandantive"
+    }
+  ]
