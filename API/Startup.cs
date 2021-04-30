@@ -31,6 +31,7 @@ namespace API
             services.AddControllers();
             services.AddDbContext<GemsContext>(x => x.UseSqlite(_configuration.GetConnectionString("DefaultConnection")));
 
+            services.AddScoped<IGemsRepository,GemsRepository>();
             services.AddScoped(typeof(IGenericRepository<>), (typeof(GenericRepository<>)));
         }
 
