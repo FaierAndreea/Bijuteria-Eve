@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Entities.Classes;
+using Entities.Specifications;
 
 namespace Entities.Repositories
 {
@@ -10,5 +11,7 @@ namespace Entities.Repositories
         Task<IReadOnlyList<GemType>> GetGemTypesList();
         Task<IReadOnlyList<GemKarat>> GetGemKaratsList();
         Task<Gem> GetGemById(int id);
+        Task<Gem> GetGemWithSpec(ISpecification<Gem> spec);
+        Task<IReadOnlyList<Gem>> GetGemListWithSpec(ISpecification<Gem> spec);
     }
 }

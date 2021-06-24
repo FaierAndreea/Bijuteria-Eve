@@ -1,9 +1,10 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using DAL;
 using Entities.Classes;
 using Entities.Repositories;
+using Entities.Specifications;
 using Microsoft.AspNetCore.Mvc;
+using AutoMapper;
 
 namespace API.Controllers
 {
@@ -12,15 +13,25 @@ namespace API.Controllers
     public class GemController : ControllerBase
     {
         private readonly IGemsRepository _repo;
-        public GemController(IGemsRepository repo)
+        private readonly IMapper _mapper;
+        public GemController(IGemsRepository repo, IMapper mapper)
         {
             _repo = repo;
+            _mapper = mapper;
         }
 
         [HttpGet]
-        public async Task<ActionResult<List<Gem>>> GetGemsList()
+        public async Task<ActionResult<Pagination<GemReturnDTO>>> GetGemsList([FromQuery] GemParams gemParams)
         {
-            return Ok(await _repo.GetGemsList());
+            var searchSpec = new SearchSpecification(gemParams);
+            var filterSpec = new FilterSpecification(gemParams);
+            var gemList = await _repo.GetGemListWithSpec(filterSpec); 
+            
+            var data = _mapper.Map<IReadOnlyList<Gem>, IReadOnlyList<GemReturnDTO>>(gemList);
+            return Ok(new Pagination<GemReturnDTO>(gemParams.PageIndex,gemParams.PageSize,data));
+            
+            //also paging here
+            //return Ok(gemList.Skip((gemParams.PageIndex -1) * gemParams.PageSize).Take(gemParams.PageSize));
         }
         [HttpGet("{id}")]
         public async Task<ActionResult<Gem>> GetGemById(int id)

@@ -1,7 +1,9 @@
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Entities.Classes;
 using Entities.Repositories;
+using Entities.Specifications;
 using Microsoft.EntityFrameworkCore;
 
 namespace DAL
@@ -27,6 +29,11 @@ namespace DAL
             return await _context.GemKarats.ToListAsync();
         }
 
+        public async Task<IReadOnlyList<Gem>> GetGemListWithSpec(ISpecification<Gem> spec)
+        {
+            return await ApplySpec(spec).ToListAsync();
+        }
+
         public async Task<IReadOnlyList<Gem>> GetGemsList()
         {
             return await _context.Gems
@@ -38,6 +45,15 @@ namespace DAL
         public async Task<IReadOnlyList<GemType>> GetGemTypesList()
         {
             return await _context.GemTypes.ToListAsync();
+        }
+
+        public async Task<Gem> GetGemWithSpec(ISpecification<Gem> spec)
+        {
+            return await ApplySpec(spec).FirstOrDefaultAsync();
+        }
+        private IQueryable<Gem> ApplySpec(ISpecification<Gem> spec)
+        {
+            return SpecificationEvaluator<Gem>.GetQuery(_context.Set<Gem>().AsQueryable(),spec);
         }
     }
 }
