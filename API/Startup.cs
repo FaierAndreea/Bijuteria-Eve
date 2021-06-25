@@ -1,4 +1,3 @@
-using AutoMapper;
 using DAL;
 using Entities.Repositories;
 using Microsoft.AspNetCore.Builder;
@@ -53,6 +52,8 @@ namespace API
             app.UseHttpsRedirection();
 
             app.UseRouting();
+            
+            app.UseStaticFiles();
 
             app.UseAuthorization();
 
