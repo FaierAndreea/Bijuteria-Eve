@@ -11,8 +11,8 @@ namespace Entities.Repositories
             set => _pageSize = (value > MaxPageSize) ? MaxPageSize : value;
         }
         public int? KaratId {get;set;}
-        public int? TypeId { get; set; }
-        public string Sort { get; set; }
+        public int? TypeId { get; set; } 
+        public string Sort { get; set; } 
         private string _search;
         public string Search {
             get=> _search;
