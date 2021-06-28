@@ -25,20 +25,20 @@ namespace API
 
             services.AddMvc();
 
+            services.AddSwaggerGen();
+
             services.AddControllers();
             services.AddDbContext<GemsContext>(x => x.UseSqlite(_configuration.GetConnectionString("DefaultConnection")));
 
             services.AddScoped<IGemsRepository,GemsRepository>();
-            services.AddScoped(typeof(IGenericRepository<>), (typeof(GenericRepository<>)));
 
-            /* Auto Mapper Configurations
-            var mappingConfig = new MapperConfiguration(mc =>
+            services.AddCors(opt =>
             {
-                mc.AddProfile(new MappingProfile());
+                opt.AddPolicy("CorsPolicy",policy =>
+                {
+                    policy.AllowAnyHeader().AllowAnyMethod().WithOrigins("https://localhost:4200");
+                });
             });
-
-            IMapper mapper = mappingConfig.CreateMapper();
-            services.AddSingleton(mapper);*/
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -48,12 +48,16 @@ namespace API
             {
                 app.UseDeveloperExceptionPage();
             }
+            app.UseSwagger();
+            app.UseSwaggerUI();
 
             app.UseHttpsRedirection();
 
             app.UseRouting();
             
             app.UseStaticFiles();
+
+            app.UseCors("CorsPolicy");
 
             app.UseAuthorization();
 
