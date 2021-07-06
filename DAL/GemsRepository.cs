@@ -16,6 +16,11 @@ namespace DAL
             _context = context;
         }
 
+        public async Task<int> CountAsync(ISpecification<Gem> spec)
+        {
+            return await ApplySpec(spec).CountAsync();
+        }
+
         public async Task<Gem> GetGemById(int id)
         {
             return await _context.Gems

@@ -15,6 +15,7 @@ export class ShopComponent implements OnInit {
   types: ITypeModel[] = [];
   karats: IKaratModel[] = [];
   shopModel = new ShopModel;
+  counter: number;
   sortList = [
     {name: 'Alfabetic', value: 'name'},
     {name: 'Ascendent dupa pret', value: 'priceAsc'},
@@ -36,6 +37,7 @@ export class ShopComponent implements OnInit {
       this.gems=response.data;
       this.shopModel.pageIndex = response.pageIndex;
       this.shopModel.pageSize = response.pageSize;
+      this.counter = response.count;
     },
       error =>{ console.log(error);});
   }

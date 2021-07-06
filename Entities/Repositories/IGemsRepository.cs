@@ -13,5 +13,6 @@ namespace Entities.Repositories
         Task<Gem> GetGemById(int id);
         Task<Gem> GetGemWithSpec(ISpecification<Gem> spec);
         Task<IReadOnlyList<Gem>> GetGemListWithSpec(ISpecification<Gem> spec);
+        Task<int> CountAsync(ISpecification<Gem> spec);
     }
 }

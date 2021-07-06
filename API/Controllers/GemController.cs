@@ -23,12 +23,12 @@ namespace API.Controllers
         [HttpGet]
         public async Task<ActionResult<Pagination<GemReturnDTO>>> GetGemsList([FromQuery] GemParams gemParams)
         {
-            var searchSpec = new SearchSpecification(gemParams);
+            var countSpec = new SearchSpecification(gemParams);
             var filterSpec = new FilterSpecification(gemParams);
             var gemList = await _repo.GetGemListWithSpec(filterSpec); 
-            
+            var itemsCount = await _repo.CountAsync(countSpec);
             var data = _mapper.Map<IReadOnlyList<Gem>, IReadOnlyList<GemReturnDTO>>(gemList);
-            return Ok(new Pagination<GemReturnDTO>(gemParams.PageIndex,gemParams.PageSize,data));
+            return Ok(new Pagination<GemReturnDTO>(gemParams.PageIndex,gemParams.PageSize,itemsCount,data));
             
             //also paging here
             //return Ok(gemList.Skip((gemParams.PageIndex -1) * gemParams.PageSize).Take(gemParams.PageSize));
