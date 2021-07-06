@@ -1,0 +1,45 @@
+<div class="container">
+    <div class="row">
+        <section class="col-3">
+            <h5 class="text-warning ml-3">Sorteaza</h5>
+            <select class="custom-select mb-3" (change)="setSort($event.target.value)">
+                <option *ngFor="let sort of sortList" [value]="sort.value">{{sort.name}}</option>
+            </select>
+
+              <h5 class="text-warning ml-3">Bijuterii</h5>
+              <ul class="list-group my-3">
+                <li class="list-group-item" *ngFor="let type of types"
+                [class.active]="type.id === this.shopModel.typeId" [value]="type.id"
+                (click)="setType(type.id)">
+                    {{type.name}}</li>
+              </ul>
+
+              <h5 class="text-warning ml-3">Karate</h5>
+            <ul class="list-group my-3">
+                <li class="list-group-item" *ngFor="let karat of karats" 
+                [class.active]="karat.id === this.shopModel.karatId" [value]="karat.id" 
+                (click)="setKarat(karat.id)">
+                    {{karat.name}}</li>
+              </ul>
+        </section>
+        
+        <section class="col-9">
+            <div class="d-flex justify-content-end align-items-center pb-2">
+                
+                <div class="form-inline mt-2">
+                    <input [(ngModel)]="shopModel.searchString" [typeahead]="searchStringList" [isAnimated]="true" class="form-control" #search placeholder="Search" type="text"
+                    (keyup.enter)="searchFunc()">
+                    <button (click)="searchFunc()" class="btn btn-outline-primary my-2">Search</button>
+                </div>
+            </div>
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                <div class="col-4 mg-4" *ngFor="let g of gems">
+                    <app-shop-item [gem]="g"></app-shop-item>
+                </div>
+              </div>
+              <div class="d-flex justify-content-center">
+                <pagination  (pageChanged)="changePage($event)" [itemsPerPage]="this.shopModel.pageSize"></pagination>
+              </div>
+        </section>
+    </div>
+</div>

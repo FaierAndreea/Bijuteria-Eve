@@ -34,9 +34,13 @@ namespace API.Controllers
             //return Ok(gemList.Skip((gemParams.PageIndex -1) * gemParams.PageSize).Take(gemParams.PageSize));
         }
         [HttpGet("{id}")]
-        public async Task<ActionResult<Gem>> GetGemById(int id)
+        public async  Task<ActionResult<GemReturnDTO>> GetGemById(int id)
         {
-            return await _repo.GetGemById(id);
+            var spec = new FilterSpecification(id);
+            var gem = await _repo.GetGemWithSpec(spec);
+            if(gem==null) return NotFound();
+            return _mapper.Map<Gem, GemReturnDTO>(gem);
+            //return await _repo.GetGemById(id);
         }
         [HttpGet("types")]
         public async Task<ActionResult<List<GemType>>> GetGemTypesList()
