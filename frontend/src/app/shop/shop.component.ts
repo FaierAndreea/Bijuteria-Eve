@@ -21,7 +21,7 @@ export class ShopComponent implements OnInit {
     {name: 'Ascendent dupa pret', value: 'priceAsc'},
     {name: 'Descendent dupa pret', value: 'priceDesc'}
   ];
-  searchStringList = ['inel', 'cercei', 'aur'];
+  searchStringList = ['inel', 'cercei', 'aur', 'pandantiv', 'bratara', 'lant'];
   @ViewChild('search', {static: true}) searchTerm: ElementRef;
 
   constructor(private shopService: ShopService) { }
@@ -51,14 +51,17 @@ export class ShopComponent implements OnInit {
   }
   setType(typeId: number){
     this.shopModel.typeId = typeId;
+    this.shopModel.pageIndex =1;
     this.getServiceGems();
   }
   setKarat(karatId: number){
     this.shopModel.karatId = karatId;
+    this.shopModel.pageIndex =1;
     this.getServiceGems();
   }
   setSort(sort: string){
     this.shopModel.sortString = sort;
+    this.shopModel.pageIndex =1;
     this.getServiceGems();
   }
   changePage(event: any){

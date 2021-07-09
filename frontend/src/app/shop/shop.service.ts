@@ -5,6 +5,7 @@ import { ITypeModel } from '../Models/TypeModel';
 import { IKaratModel } from '../Models/KaratModel';
 import { map } from 'rxjs/operators';
 import { ShopModel } from '../Models/ShopModel';
+import { IGemModel } from '../Models/GemModel';
 
 @Injectable({
   providedIn: 'root'
@@ -34,12 +35,13 @@ export class ShopService {
     return this.http.get<IPaginationModel>(this.url + 'gem', {observe: 'response',params})
       .pipe(map(response => {return response.body;}));
   }
-  getTypes()
-  {
+  getGem(id: number) {
+    return this.http.get<IGemModel>(this.url + 'gem/' + id);
+  }
+  getTypes() {
     return this.http.get<ITypeModel[]>(this.url + 'gem/types');
   }
-  getKarats()
-  {
+  getKarats() {
     return this.http.get<IKaratModel[]>(this.url + 'gem/karats');
   }
 
