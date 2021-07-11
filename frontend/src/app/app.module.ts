@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
 import { ShopModule } from './shop/shop.module';
 import { PageNotFoundModule } from './page-not-found/page-not-found.module';
+import { HomeModule } from './home/home.module';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { PageNotFoundModule } from './page-not-found/page-not-found.module';
     BrowserAnimationsModule,
     HttpClientModule,
     ShopModule,
+    HomeModule,
     PageNotFoundModule
   ],
   providers: [],

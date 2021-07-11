@@ -1,6 +1,24 @@
-<p>buna</p>
-<div *ngIf="gem">
-    <p>pa</p>
-    <p> {{gem.id}}</p>
-    <p>{{gem.name}}</p>
+<div class="container mt-5">
+    <div class="row" *ngIf="gem">
+        <div class="col-6">
+            <img src="{{gem.picture}}" alt="{{gem.name}}" class="img-fluid w-100">
+        </div>
+        <div class="col-6">
+            <h3>{{gem.name}}</h3>
+            <p style="font-size: 2em;">{{ gem.price | currency: 'RON' : '' : '1.0-0'}} RON</p>
+            <div class="d-flex justify-content-start align-items-center">
+                <i class="fa fa-minus-circle text-warning mr-2" style="cursor: pointer; font-size: 2em;"></i>
+                <span class="font-weight-bold" style="font-size: 1.5em;">2</span>
+                <i class="fa fa-plus-circle text-warning mx-2" style="cursor: pointer; font-size: 2em;"></i>
+                <button class="btn btn-outline-primary btn-lg ml-4">Adauga in cos</button>
+            </div>
+            <div class="row mt-5">
+            <div class="col-12 ml-2">
+                <h4>Descriere</h4>
+                <p>{{gem.description}}</p>
+            </div>
+        </div>
+        </div>
+        
+    </div>
 </div>

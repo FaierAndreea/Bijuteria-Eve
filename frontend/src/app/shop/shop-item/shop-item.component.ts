@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { IGemModel } from 'src/app/Models/GemModel';
 
+
 @Component({
   selector: 'app-shop-item',
   templateUrl: './shop-item.component.html',

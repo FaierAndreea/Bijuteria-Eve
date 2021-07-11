@@ -19,7 +19,7 @@ export class ShopService {
   {
     let params = new HttpParams;
     if(shopModel.typeId !== 0){
-      params = params.append('typeId',shopModel.typeId); //l-am lasat number. trebuie string?
+      params = params.append('typeId',shopModel.typeId);
     }
     if(shopModel.karatId !== 0){
       params = params.append('karatId', shopModel.karatId);

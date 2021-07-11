@@ -36,8 +36,9 @@
                 <div class="col-4 mg-4" *ngFor="let g of gems">
                     <app-shop-item [gem]="g"></app-shop-item>
                 </div>
-              </div>
-              <div class="d-flex justify-content-center">
+                <div *ngIf="!counter" class="ml-4 mt-4"> Niciun rezultat! </div>
+            </div>
+              <div class="d-flex justify-content-center" *ngIf="counter">
                 <pagination [totalItems]="this.counter" (pageChanged)="changePage($event)" [itemsPerPage]="this.shopModel.pageSize"></pagination>
               </div>
         </section>
