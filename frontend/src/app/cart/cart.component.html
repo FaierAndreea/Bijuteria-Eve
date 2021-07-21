@@ -1,0 +1,60 @@
+<div *ngIf="(cart$|async) === null">
+    <p>Cosul tau este gol</p>
+</div>
+
+<!--epic bootstrap-->>
+<section class="shopping-cart dark" *ngIf="(cart$|async) as cart">
+    <div class="container" *ngIf="(total$|async) as total">
+       <div class="block-heading">
+         <h2>Cosul tau</h2>
+       </div>
+       <div class="content">
+            <div class="row">
+                <div class="col-md-12 col-lg-8">
+                    <div class="items" *ngFor="let item of cart.items">
+                        <div class="product">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <img class="img-fluid mx-auto d-block image" src="{{item.picture}}">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="info">
+                                        <div class="row">
+                                            <div class="col-md-5 product-name">
+                                                <div class="product-name">
+                                                    <a routerLink="/shop/{{item.id}}">{{item.name}}</a>
+                                                    <div class="product-info">
+                                                        {{ item.price | currency: 'RON' : '' : '1.0-0'}} RON
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 quantity">
+                                                <i (click)="decrementQuantity(item)" class="fa fa-minus-circle text-warning"></i>
+                                                <input readonly value="{{item.quantity}}" class="form-control quantity-input">
+                                                <i (click)="incrementQuantity(item)" class="fa fa-plus-circle text-warning"></i>
+                                                <!--input id="quantity" type="number" value ="{{item.quantity}}" class="form-control quantity-input"-->
+                                            </div>
+                                            <div class="col-md-3 price">
+                                                <span>{{ item.price*item.quantity | currency: 'RON' : '' : '1.0-0'}}RON</span>
+                                                <p class="remove"><i (click)="removeItem(item)" class="fa fa-trash"></i></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 col-lg-4">
+                    <div class="summary">
+                        <h3>Summary</h3>
+                        <div class="summary-item"><span class="text">Subtotal</span><span class="price">{{total.subtotal | currency: 'RON' : '' : '1.0-0'}} RON</span></div>
+                        <div class="summary-item"><span class="text">Shipping</span><span class="price">{{total.shipping | currency: 'RON' : '' : '1.0-0'}} RON</span></div>
+                        <div class="summary-item"><span class="text">Total</span><span class="price">{{total.total | currency: 'RON' : '' : '1.0-0'}} RON</span></div>
+                        <button type="button" class="btn btn-primary btn-lg btn-block">Checkout</button>
+                    </div>
+                </div>
+            </div> 
+        </div>
+    </div>
+</section>

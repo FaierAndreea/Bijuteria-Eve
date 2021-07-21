@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { CartService } from 'src/app/cart/cart.service';
 import { IGemModel } from 'src/app/Models/GemModel';
 
 
@@ -10,9 +11,13 @@ import { IGemModel } from 'src/app/Models/GemModel';
 export class ShopItemComponent implements OnInit {
   @Input() gem!: IGemModel;
 
-  constructor() { }
+  constructor(private cartService: CartService) { }
 
   ngOnInit(): void {
+  }
+
+  addItemToCart() {
+    this.cartService.addToCart(this.gem);
   }
 
 }

@@ -7,7 +7,7 @@
        <span class="mb-2">{{ gem.price | currency: 'RON' : '' : '1.0-0'}} RON</span>
        
             <div class="btn-group mt-auto">
-                <button type="button" class="btn btn-outline-secondary fa fa-shopping-cart mr-2"></button>
+                <button (click)="addItemToCart()" type="button" class="btn btn-outline-secondary fa fa-shopping-cart mr-2"></button>
                 <button routerLink="/shop/{{gem.id}}" type="button" class="btn btn-outline-secondary">Detalii</button>
             </div>
     </div>

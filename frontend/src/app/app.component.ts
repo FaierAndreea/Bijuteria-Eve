@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { IGemModel } from './Models/GemModel';
-import { IPaginationModel } from './Models/PaginationModel';
+import { CartService } from './cart/cart.service';
 
 @Component({
   selector: 'app-root',
@@ -11,8 +9,12 @@ import { IPaginationModel } from './Models/PaginationModel';
 export class AppComponent  implements OnInit{
   title = 'Eve';
   
-constructor() {}
+constructor(private cartService: CartService) {}
 
   ngOnInit(): void {
+    const cartId = localStorage.getItem('cart_id');
+    if(cartId) {
+      this.cartService.getCart(cartId).subscribe(()=> console.log('cart done'), error => console.log(error));
+    }
   }
 }
