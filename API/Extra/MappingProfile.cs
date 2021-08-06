@@ -1,5 +1,7 @@
+using API.Extra;
 using AutoMapper;
 using Entities.Classes;
+using Entities.Identity;
 using Microsoft.Extensions.Configuration;
 
 namespace API
@@ -13,6 +15,7 @@ namespace API
             .ForMember(m => m.GemType, n => n.MapFrom(o => o.GemType.Name))
             .ForMember(m => m.GemKarat, n => n.MapFrom(o => o.GemKarat.Name))
             .ForMember(m => m.Picture, n => n.MapFrom<PictureUrlResolver>());
+            CreateMap<Address, AddressDTO>().ReverseMap();
         }
     }
 }

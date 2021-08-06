@@ -6,7 +6,7 @@ namespace DAL
 {
     public class GemsContext : DbContext
     {
-        public GemsContext(DbContextOptions options) : base(options)
+        public GemsContext(DbContextOptions<GemsContext> options) : base(options)
         {
         }
         public DbSet<Gem> Gems {get; set;}

@@ -9,6 +9,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
+using Entities.Identity;
+using DAL.Identity;
 
 namespace API
 {
@@ -26,6 +29,11 @@ namespace API
                    var context = services.GetRequiredService<GemsContext>();
                    await context.Database.MigrateAsync();
                    await SeedDataClass.SeedAsync(context, loggerFactory);
+
+                   var userManager = services.GetRequiredService<UserManager<AppUser>>();
+                   var identityContext = services.GetRequiredService<IdentityContext>();
+                   await identityContext.Database.MigrateAsync();
+                   await IdentitySeed.SeedUserAsync(userManager);
                }
                catch(Exception ex)
                {
