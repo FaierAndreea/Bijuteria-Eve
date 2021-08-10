@@ -9,6 +9,7 @@ import { NavigationBarComponent } from './navigation-bar/navigation-bar.componen
 import { ShopModule } from './shop/shop.module';
 import { PageNotFoundModule } from './page-not-found/page-not-found.module';
 import { HomeModule } from './home/home.module';
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown'
 
 @NgModule({
   declarations: [
@@ -22,7 +23,11 @@ import { HomeModule } from './home/home.module';
     HttpClientModule,
     ShopModule,
     HomeModule,
-    PageNotFoundModule
+    PageNotFoundModule,
+    BsDropdownModule.forRoot()
+  ],
+  exports: [
+    BsDropdownModule
   ],
   providers: [],
   bootstrap: [AppComponent]

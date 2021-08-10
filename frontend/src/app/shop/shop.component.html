@@ -27,13 +27,13 @@
             <div class="d-flex justify-content-end align-items-center pb-2">
                 
                 <div class="form-inline mt-2">
-                    <input [(ngModel)]="shopModel.searchString" [typeahead]="searchStringList" [isAnimated]="true" class="form-control" #search placeholder="Search" type="text"
+                    <input [(ngModel)]="shopModel.searchString" [typeahead]="searchStringList" [isAnimated]="true" class="form-control search" #search placeholder="Search" type="text"
                     (keyup.enter)="searchFunc()">
                     <button (click)="searchFunc()" class="btn btn-outline-primary my-2">Search</button>
                 </div>
             </div>
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-                <div class="col-4 mg-4" *ngFor="let g of gems">
+                <div class="mg-4" *ngFor="let g of gems">
                     <app-shop-item [gem]="g"></app-shop-item>
                 </div>
                 <div *ngIf="!counter" class="ml-4 mt-4"> Niciun rezultat! </div>

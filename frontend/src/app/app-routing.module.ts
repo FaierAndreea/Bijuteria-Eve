@@ -9,6 +9,7 @@ const routes: Routes = [
   {path: 'shop/:id', component: ViewItemComponent},
   {path: '', redirectTo:'shop', pathMatch: 'full'},
   {path: 'cart', loadChildren: ()=>import('./cart/cart.module').then(mod => mod.CartModule), data: {breadcrumb: 'Cart'}},
+  {path: 'user', loadChildren: ()=>import('./user/user.module').then(mod => mod.UserModule), data: {breadcrumb: {skip: true}}},
   {path: '**', component: PageNotFoundComponent }
 ];
 
