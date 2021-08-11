@@ -10,16 +10,18 @@ import { UserService } from '../user.service';
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
+  hasError: boolean;
 
   constructor(private userService: UserService, private router: Router) { }
 
   ngOnInit(): void {
     this.createLoginForm();
+    this.hasError = false;
   }
 
   createLoginForm(){
     this.loginForm = new FormGroup ({
-      email: new FormControl('',Validators.required),
+      email: new FormControl('',[Validators.required, Validators.email]),
       password: new FormControl('',Validators.required)
     });
   }
@@ -27,7 +29,10 @@ export class LoginComponent implements OnInit {
   onSubmit() {
     this.userService.login(this.loginForm.value).subscribe(()=> {
       this.router.navigateByUrl('/shop');
-    }, error => console.log(error));
+    }, error => {
+      console.log(error);
+      this.hasError = true;
+    });
   }
 
 }

@@ -1,1 +1,29 @@
-<p>register works!</p>
+<div class="form">
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      <div class="title">Sign up</div>
+      <div class="subtitle">Creaza cont</div>
+      <div class="input-container ic2">
+        <input formControlName="displayName" id="displayName" class="input" type="text" placeholder=" " />
+        <div class="cut cut-short"></div>
+        <label for="displayName" class="placeholder">Nume</label>
+        <span class="text-danger errormsg" *ngIf="registerForm.get('displayName').touched && registerForm.get('displayName').invalid">Nume invalid</span>
+      </div>
+      <div class="input-container ic2">
+        <input formControlName="email" id="email" class="input" type="text" placeholder=" " />
+        <div class="cut cut-short"></div>
+        <label for="email" class="placeholder">Email</label>
+        <span class="text-danger errormsg" *ngIf="registerForm.get('email').touched && registerForm.get('email').invalid">Email invalid</span>
+      </div>
+      <div class="input-container ic2">
+        <input formControlName="password" id="password" class="input" type="password" placeholder=" " />
+        <div class="cut cut-short"></div>
+        <label for="password" class="placeholder">Parola</label>
+      </div>
+      <button type="text" class="submit">submit</button>
+      <ul class="text-danger" *ngIf="errorMessage">
+        <li *ngFor="let error of errorMessage">
+          {{error}}
+        </li>
+      </ul>
+    </form>
+  </div>

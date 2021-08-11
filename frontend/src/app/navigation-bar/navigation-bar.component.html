@@ -1,12 +1,12 @@
 <div class="nav-bar d-flex flex-md-row align-items-center justify-content-between p-3 px-md-4 mb-3 border-bottom shadow-sm fixed-top">
   <img src="/assets/images/eve_logo-1.png" class="logo" alt="logo" routerLink="/shop">
   <nav class="my-2 my-md-0 mr-md-3 text-uppercase" style="font-size: larger">
-    <a class="main-page p-2 text-white" routerLink="/shop">Shop</a>
-    <a class="main-page p-2 text-white" href="#">Detalii</a>
+    <a class="maintext main-page p-2" routerLink="/shop">Shop</a>
+    <a class="maintext main-page p-2" href="#">Detalii</a>
   </nav>
   <div class="d-flex align-items-center">
       <a routerLink="/cart" class="position-relative">
-          <i class="fa fa-shopping-cart fa-2x text-white"></i>
+          <i class="fa fa-shopping-cart fa-2x maintext"></i>
           <div *ngIf="(cart$ |async) as cart" class="cart-no">{{cart.items.length}}</div>
       </a>
       <ng-container *ngIf="(user$|async) === null">
@@ -16,15 +16,15 @@
       <ng-container *ngIf="user$|async">
         <div class="dropdown ml-3 mr-5" dropdown>
           <a class="dropdown-toggle" style="cursor: pointer;" dropdownToggle>
-            <strong>Buna, {{(user$|async).displayName}}</strong>
+            <strong class="maintext">Buna, {{(user$|async).displayName}}</strong>
           </a>
           <div class="dropdown-menu dropdown-menu-right" style="cursor:pointer" *dropdownMenu>
             <a routerLink="/cart" class="dropdown-item d-flex align-items-center py-2">
-              <i class="fa fa-shopping-cart mr-3"></i> Cosul tau
+              <i class="fa fa-shopping-cart mr-3"></i> <strong class="maintext"> Cosul tau </strong>
             </a>
             <div class="dropdown-divider"></div>
             <a (click)="logout()" class="dropdown-item d-flex align-items-center py-2">
-              <i class="fa fa-sign-out mr-3"></i> Logout
+              <i class="fa fa-sign-out mr-3"></i> <strong class="maintext"> Logout </strong>
             </a>
           </div>
         </div>

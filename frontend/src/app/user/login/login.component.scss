@@ -17,6 +17,11 @@ body {
     margin-right: auto;
   }
   
+  .errormsg {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
   .title {
     color: #eee;
     font-family: sans-serif;
