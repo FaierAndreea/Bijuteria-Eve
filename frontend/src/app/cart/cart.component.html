@@ -47,11 +47,14 @@
                 </div>
                 <div class="col-md-12 col-lg-4">
                     <div class="summary">
-                        <h3>Summary</h3>
+                        <h3>Sumar comanda</h3>
                         <div class="summary-item"><span class="text">Subtotal</span><span class="price">{{total.subtotal | currency: 'RON' : '' : '1.0-0'}} RON</span></div>
-                        <div class="summary-item"><span class="text">Shipping</span><span class="price">{{total.shipping | currency: 'RON' : '' : '1.0-0'}} RON</span></div>
+                        <div class="summary-item"><span class="text">Livrare</span><span class="price">{{total.shipping | currency: 'RON' : '' : '1.0-0'}} RON</span></div>
                         <div class="summary-item"><span class="text">Total</span><span class="price">{{total.total | currency: 'RON' : '' : '1.0-0'}} RON</span></div>
-                        <button type="button" class="btn btn-primary btn-lg btn-block">Checkout</button>
+                        <div *ngIf="total.total > 9999"> 
+                            <img src="/assets/images/foaieaur.jpg" width="30px" height="30px">
+                            *foita de aur cadou ( <a routerLink="/promo">promotie</a> )
+                        </div>
                     </div>
                 </div>
             </div> 

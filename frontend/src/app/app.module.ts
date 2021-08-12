@@ -10,6 +10,7 @@ import { ShopModule } from './shop/shop.module';
 import { PageNotFoundModule } from './page-not-found/page-not-found.module';
 import { HomeModule } from './home/home.module';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown'
+import { PromoModule } from './promo/promo.module';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown'
     HttpClientModule,
     ShopModule,
     HomeModule,
+    PromoModule,
     PageNotFoundModule,
     BsDropdownModule.forRoot()
   ],
