@@ -1,3 +1,7 @@
+<div class="alert alert-danger d-flex align-items-center" role="alert" *ngIf="errorMessage">
+    {{errorMessage}} 
+</div>
+
 <div class="form">
     <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
       <div class="title">Sign up</div>
@@ -20,10 +24,5 @@
         <label for="password" class="placeholder">Parola</label>
       </div>
       <button type="text" class="submit">submit</button>
-      <ul class="text-danger" *ngIf="errorMessage">
-        <li *ngFor="let error of errorMessage">
-          {{error}}
-        </li>
-      </ul>
     </form>
   </div>

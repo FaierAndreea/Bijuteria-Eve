@@ -90,7 +90,7 @@ namespace API.Controllers
         public async Task<ActionResult<UserDTO>> Register(RegisterDTO registerDTO)
         {
             if(CheckEmailExistsAsync(registerDTO.Email).Result.Value){
-                return BadRequest("An account already exists with this email");
+                return BadRequest("Exista deja un cont cu aceasta adresa de email");
             }
             var user = new AppUser
             {
@@ -99,7 +99,7 @@ namespace API.Controllers
                 UserName = registerDTO.Email
             };
             var create = await _userManager.CreateAsync(user, registerDTO.Password);
-            if (!create.Succeeded) return BadRequest("bad request");
+            if (!create.Succeeded) return BadRequest("Ai in vedere ca parola ta sa contina cel putin o majuscula, un numar si un simbol");
             return new UserDTO
             {
                 DisplayName = user.DisplayName,

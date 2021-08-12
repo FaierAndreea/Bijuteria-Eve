@@ -11,7 +11,7 @@ import { UserService } from '../user.service';
 export class RegisterComponent implements OnInit {
   registerForm: FormGroup;
   hasError: boolean;
-  errorMessage: string[];
+  errorMessage: string;
 
   constructor(private userService: UserService, private router: Router) { }
 
@@ -34,8 +34,7 @@ export class RegisterComponent implements OnInit {
     }, error => {
       console.log(error);
       this.hasError = true;
-      this.errorMessage = error.errors;
-      if(this.errorMessage) for(let err of this.errorMessage) console.log(err);
+      this.errorMessage = error.error;
     });
   }
 
