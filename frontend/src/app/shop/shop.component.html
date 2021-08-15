@@ -1,22 +1,22 @@
 <div class="container">
     <div class="row">
-        <section class="col-3">
-            <h5 class="text-warning ml-3">Sorteaza</h5>
-            <select class="custom-select mb-3" (change)="setSort($event.target.value)">
+        <section class="col-3 filters">
+            <h5 class="text-warning ml-3 titlefilter">Sorteaza</h5>
+            <select class="custom-select mb-3 selector" (change)="setSort($event.target.value)">
                 <option *ngFor="let sort of sortList" [value]="sort.value">{{sort.name}}</option>
             </select>
 
-              <h5 class="text-warning ml-3">Bijuterii</h5>
+              <h5 class="text-warning ml-3 titlefilter">Bijuterii</h5>
               <ul class="list-group my-3">
-                <li class="list-group-item" *ngFor="let type of types"
+                <li class="list-group-item listgroup" *ngFor="let type of types"
                 [class.active]="type.id === this.shopModel.typeId" [value]="type.id"
                 (click)="setType(type.id)">
                     {{type.name}}</li>
               </ul>
 
-              <h5 class="text-warning ml-3">Karate</h5>
+              <h5 class="text-warning ml-3 titlefilter">Karate</h5>
             <ul class="list-group my-3">
-                <li class="list-group-item" *ngFor="let karat of karats" 
+                <li class="list-group-item listgroup" *ngFor="let karat of karats" 
                 [class.active]="karat.id === this.shopModel.karatId" [value]="karat.id" 
                 (click)="setKarat(karat.id)">
                     {{karat.name}}</li>
@@ -38,7 +38,7 @@
                 </div>
                 <div *ngIf="!counter" class="ml-4 mt-4"> Niciun rezultat! </div>
             </div>
-              <div class="d-flex justify-content-center" *ngIf="counter">
+              <div class="d-flex justify-content-center shoppager" *ngIf="counter">
                 <pagination [totalItems]="this.counter" (pageChanged)="changePage($event)" [itemsPerPage]="this.shopModel.pageSize"></pagination>
               </div>
         </section>

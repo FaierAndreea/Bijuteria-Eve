@@ -8,14 +8,24 @@
     flex-direction: row;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 50px;
+    margin-bottom: 20px;
     position: relative;
+    border-style: groove;
+}
+
+h3 {
+    font-size:3vw;
+}
+p{
+    font-size: 2vw;
 }
 
 .promoimg {
     object-fit: fill;
     height: 80%;
     width: 30%;
+    margin-right: 50px;
+    margin-left: 10px;
 }
 
 .promobtn {
@@ -24,8 +34,34 @@
     right: 0;
 }
 
-.promobanner {
-    width: 100%;
-    height: 220px;
-    margin-top: -5%;
+.countdown {
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+}
+
+.cd-msg {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font-family: 'Bookman Old Style',Bookman,'URW Bookman L','Palatino Linotype',serif;
+}
+
+.msg1 {
+    font-size: 2vw;
+}
+
+.msg2 {
+    font-size: 3vw;
+}
+
+@media (max-width: 800px){
+    .promo {
+        height: 180px;
+    }
 }

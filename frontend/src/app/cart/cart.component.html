@@ -1,8 +1,10 @@
 <div *ngIf="(cart$|async) === null">
-    <p>Cosul tau este gol</p>
+    <div class="block-heading">
+        <h2>Cosul tau este gol</h2>
+      </div>
 </div>
 
-<!--epic bootstrap-->>
+<!--epic bootstrap-->
 <section class="shopping-cart dark" *ngIf="(cart$|async) as cart">
     <div class="container" *ngIf="(total$|async) as total">
        <div class="block-heading">

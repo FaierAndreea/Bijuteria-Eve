@@ -1,3 +1,25 @@
+.shoppager {
+    margin-top: 20px;
+    color: #623238;
+}
+
+pagination.active {
+    color: #623238 !important;
+    background-color: black !important;
+}
+
+.list-group-item.active{
+    background-color: #623238 !important;
+    border-color: black;
+
+}
+
+.listgroup:hover {
+    background: rgba($color: gray, $alpha: 0.5);
+    transition: all 1s;
+}
+
+
 @media (max-width: 700px) {
     .btn {
         max-width: 100px;
@@ -5,5 +27,14 @@
     }
     .search {
         width: 150px;
+    }
+    .filters {
+        font-size: 10px;
+    }
+    .selector {
+        font-size: 10px;
+    }
+    .titlefilter {
+        font-size: 12px;
     }
 }
