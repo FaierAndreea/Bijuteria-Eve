@@ -21,7 +21,7 @@ export class ShopComponent implements OnInit {
     {name: 'Ascendent dupa pret', value: 'priceAsc'},
     {name: 'Descendent dupa pret', value: 'priceDesc'}
   ];
-  searchStringList = ['inel', 'cercei', 'aur', 'pandantiv', 'bratara', 'lant'];
+  searchStringList = ['inel', 'cercei', 'aur', 'pandantiv', 'bratara', 'lant', 'diamant', 'pietre'];
   @ViewChild('search', {static: true}) searchTerm: ElementRef;
 
   constructor(private shopService: ShopService) { }

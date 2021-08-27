@@ -115,7 +115,7 @@
         "Name": "Bratara din aur galben cu Camee",
         "Description": "Bratara aur galben 14K (bratara cu Camee). Gramaj: 9,42 Gr, marime: 20 cm",
         "Price": 2540,
-        "Picture": "images/gems/B5.jpeg",
+        "Picture": "images/gems/B5.jpg",
         "GemTypeId": 3,
         "GemKaratId": 1
     },
@@ -163,7 +163,7 @@
         "Name": "Cercei din aur galben cu pietre albe",
         "Description": "Cercei aur alb 14K (cercei bumbi cu pietre albe). Gramaj: 2,70 Gr",
         "Price": 730,
-        "Picture": "images/gems/C5c.jpeg",
+        "Picture": "images/gems/C5.jpeg",
         "GemTypeId": 4,
         "GemKaratId": 1
     },
@@ -182,5 +182,37 @@
         "Picture": "images/gems/P2.jpeg",
         "GemTypeId": 5,
         "GemKaratId": 1
+    },
+    {
+        "Name": "Inel aur 18K cu diamante",
+        "Description": "Inel din aur 18K cu diamante. Gramaj: 2,90 Gr. Diamant: 0.80K",
+        "Price": 9600,
+        "Picture": "images/gems/I8.JPG",
+        "GemTypeId": 1,
+        "GemKaratId": 2
+    },
+    {
+        "Name": "Cercei aur 18K cu diamante si safire",
+        "Description": "Cercei din aur 18K cu diamante si safire. Granaj: 2,50 Gr. Dinamant: 0.63K",
+        "Price": 12200,
+        "Picture":"images/gems/C6.JPG",
+        "GemTypeId": 4,
+        "GemKaratId":2
+    },
+    {
+        "Name": "Cercei aur 18K cu diamante si smarald",
+        "Description": "Cercei din aur 18K cu diamante si smarald. Gramaj: 2,34 Gr. Diamant: 0,20K",
+        "Price": 6900,
+        "Picture":"images/gems/C7.JPG",
+        "GemTypeId": 4,
+        "GemKaratId":2
+    },
+    {
+        "Name": "Lant cu pandantiv aur alb 18K cu rubin si diamant",
+        "Description": "Lant cu pandantiv aur alb 18K cu rubin si diamant. Gramaj: 2 Gr. Diamant: 0,02K",
+        "Price": 2600,
+        "Picture":"images/gems/L4.JPG",
+        "GemTypeId": 2,
+        "GemKaratId": 2
     }
 ]

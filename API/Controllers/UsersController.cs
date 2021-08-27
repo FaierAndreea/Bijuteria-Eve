@@ -88,7 +88,7 @@ namespace API.Controllers
         }
         [HttpPost("register")]
         public async Task<ActionResult<UserDTO>> Register(RegisterDTO registerDTO)
-        {
+        { 
             if(CheckEmailExistsAsync(registerDTO.Email).Result.Value){
                 return BadRequest("Exista deja un cont cu aceasta adresa de email");
             }
@@ -106,12 +106,6 @@ namespace API.Controllers
                 Token = _tokenService.CreateToken(user),
                 Email = user.Email
             };
-        }
-        [HttpGet("testauth")]
-        [Authorize]
-        public ActionResult<string> GetSecretText()
-        {
-            return "secret";
         }
     }
 }

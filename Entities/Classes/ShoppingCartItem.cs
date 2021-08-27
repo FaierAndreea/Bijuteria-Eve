@@ -6,6 +6,6 @@ namespace Entities.Classes
         public string Name { get; set; }
         public decimal Price { get; set; }
         public int Quantity { get; set; }
-        public string Picture { get; set; } //didnt add type and k
+        public string Picture { get; set; }
     }
 }
