@@ -4,8 +4,6 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { UserRoutingModule } from './user-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
-import { ShopModule } from '../shop/shop.module';
-
 
 
 @NgModule({
@@ -19,7 +17,7 @@ import { ShopModule } from '../shop/shop.module';
     ReactiveFormsModule
   ],
   exports: [
-    ReactiveFormsModule //not sure if this works or i should add it in shopmodule and inport that here(i dont have sharedmodule)
+    ReactiveFormsModule 
   ]
 })
 export class UserModule { }

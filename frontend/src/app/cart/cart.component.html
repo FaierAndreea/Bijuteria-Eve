@@ -1,6 +1,8 @@
 <div *ngIf="(cart$|async) === null">
     <div class="block-heading">
         <h2>Cosul tau este gol</h2>
+        <i class="fa fa-shopping-cart fa-5x"></i>
+        <p class="sadface">:(</p>
       </div>
 </div>
 
@@ -57,6 +59,7 @@
                             <img src="/assets/images/foaieaur.jpg" width="30px" height="30px">
                             *foita de aur cadou ( <a routerLink="/promo">promotie</a> )
                         </div>
+                        <button routerLink="/checkout" type="button" class="btn btn-primary btn-lg btn-block">Comanda</button>
                     </div>
                 </div>
             </div> 

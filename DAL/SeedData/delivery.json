@@ -1,0 +1,16 @@
+[
+    {
+      "Id": 1,
+      "Name": "Curier",
+      "Description": "Livrare la domiciliu",
+      "Time": "4-7 zile",
+      "Price": 15
+    },
+    {
+      "Id": 2,
+      "Name": "Curier rapid",
+      "Description": "Livrare la domiciliu",
+      "Time": "1-2 zile",
+      "Price": 30
+    }
+]

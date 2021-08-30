@@ -1,0 +1,63 @@
+<div class="check-form" [formGroup]="checkoutForm">
+  
+  <div class="formadr" formGroupName="addressForm">
+    
+    <div class="row firstrow">
+        <h4>Adresa de livrare</h4>  
+        <button class="btn btn-outline-primary my-2" (click)="saveAddress()" [disabled]="!checkoutForm.get('addressForm').dirty || !checkoutForm.get('addressForm').valid">Salveaza adresa</button>
+    </div>
+
+        <div class="row">
+          <div class="input-container">
+              <input formControlName="firstName" id="firstName" class="input" type="text" placeholder="Prenume" />
+              <label for="firstName" class="placeholder"></label>
+          </div>
+          
+          <div class="input-container">
+              <input formControlName="lastName" id="lastName" class="input" type="text" placeholder="Nume" />
+              <label for="lastName" class="placeholder"></label>
+          </div>
+        </div>
+        
+        <div class="row">
+            <div class="input-container">
+                <input formControlName="city" id="city" class="input" type="text" placeholder="Oras" />
+                <label for="city" class="placeholder"></label>
+            </div>
+            
+          <div class="input-container">
+              <input formControlName="street" id="street" class="input" type="text" placeholder="Strada" />
+              <label for="street" class="placeholder"></label>
+          </div>
+          
+        </div>
+        
+        <div class="row">
+          <div class="input-container str-nr">
+              <input formControlName="streetNumber" id="streetNumber" class="input" type="number" placeholder="Numar" size="2" />
+              <label for="streetNumber" class="placeholder"></label>
+          </div>
+          <div class="input-container zip-code">
+              <input formControlName="zipCode" id="zipCode" class="input" type="text" placeholder="Cod postal" />
+              <label for="zipCode" class="placeholder"></label>
+           </div> 
+          
+        </div>
+        
+        <div class="input-container description">
+            <input formControlName="details" id="details" class="input" type="text" placeholder="Detalii" />
+            <label for="details" class="placeholder"></label>
+        </div>
+
+    </div>
+  </div>
+
+
+<div class="float-none d-flex justify-content-between flex-column flex-lg-row mb-5">
+    <button class="btn btn-outline-primary" routerLink="/cart">
+        <i class="fa fa-angle-left"></i>
+    </button>
+    <button [disabled]="checkoutForm.get('addressForm').invalid" class="btn btn-primary" cdkStepperNext>
+        <i class="fa fa-angle-right"></i>
+    </button>
+</div>

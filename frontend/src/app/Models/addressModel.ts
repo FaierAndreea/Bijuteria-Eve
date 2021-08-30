@@ -1,4 +1,3 @@
-import * as internal from "stream";
 
 export interface IAddressModel {
     firstName: string;

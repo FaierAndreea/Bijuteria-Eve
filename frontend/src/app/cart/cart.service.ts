@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Cart, ICartItem, ICartModel, ICartTotal } from '../Models/cartModel';
+import { IDeliveryModel } from '../Models/DeliveryModel';
 import { IGemModel } from '../Models/GemModel';
 
 @Injectable({
@@ -14,6 +15,7 @@ export class CartService {
   private totalBS = new BehaviorSubject<ICartTotal>(null);
   cart$ = this.cartBS.asObservable();
   total$ = this.totalBS.asObservable();
+  shippingPrice = 0;
 
   constructor(private http: HttpClient) { }
 
@@ -40,6 +42,12 @@ export class CartService {
       this.totalBS.next(null);
       localStorage.removeItem('cart_id'); },
       error => console.log(error) );
+  }
+
+  cleanUpCart(id: string) {
+    this.cartBS.next(null);
+    this.totalBS.next(null);
+    localStorage.removeItem('cart_id');
   }
 
   incrementQuantity(item: ICartItem) {
@@ -103,9 +111,18 @@ export class CartService {
 
   private calculateTotal() {
     const cart = this.cartBS.value;
-    const shipping =0;
+    const shipping = this.shippingPrice;
     const subtotal = cart.items.reduce((a,b)=> (b.price * b.quantity) + a, 0);
     const total = subtotal + shipping;
     this.totalBS.next({shipping, subtotal, total});
+  }
+
+  addShippingPrice(delivery: IDeliveryModel) {
+    this.shippingPrice = delivery.price;
+    this.calculateTotal();
+  }
+
+  getCartBSValue() {
+    return this.cartBS.value;
   }
 }

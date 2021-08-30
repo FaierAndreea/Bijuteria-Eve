@@ -1,0 +1,36 @@
+.input-container {
+    padding: 10px;
+    font-size: 18px;
+}
+
+input {
+    background-color: #eaf7fd;
+    border: none;
+}
+
+.check-form, .row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.firstrow{
+    justify-content: space-between;
+}
+
+
+.zip-code {
+    display: flex;
+    justify-content: center;
+}
+
+.description {
+    display: flex;
+    justify-content: center;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

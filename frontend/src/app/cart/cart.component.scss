@@ -105,6 +105,13 @@
 .shopping-cart .summary button{
 	margin-top: 20px;
 }
+.fa-shopping-cart {
+	color: #3b99e0;
+}
+.sadface {
+	margin-top: -60px;
+	color: white;
+}
 
 @media (min-width: 768px) {
 	.shopping-cart .items .product .info {

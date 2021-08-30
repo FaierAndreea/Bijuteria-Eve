@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text.Json;
 using System.Threading.Tasks;
 using Entities.Classes;
+using Entities.OrderClasses;
 using Microsoft.Extensions.Logging;
 
 namespace DAL
@@ -42,6 +43,16 @@ namespace DAL
                     foreach (var item in gems)
                     {
                         context.Gems.Add(item);
+                    }
+                    await context.SaveChangesAsync();
+                }
+                if(!context.DeliveryMethods.Any())
+                {
+                    var delivaryData = File.ReadAllText("../DAL/SeedData/delivery.json");
+                    var delivery = JsonSerializer.Deserialize<List<DeliveryMethod>>(delivaryData);
+                    foreach (var item in delivery)
+                    {
+                        context.DeliveryMethods.Add(item);
                     }
                     await context.SaveChangesAsync();
                 }

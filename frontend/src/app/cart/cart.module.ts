@@ -12,6 +12,9 @@ import { CartRoutingModule } from './cart-routing.module';
   imports: [
     CommonModule,
     CartRoutingModule
+  ],
+  exports: [
+    CartComponent
   ]
 })
 export class CartModule { }

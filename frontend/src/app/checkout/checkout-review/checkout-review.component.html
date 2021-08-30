@@ -1,0 +1,51 @@
+
+<section class="shopping-cart dark" *ngIf="(cart$|async)">
+    <div class="container">
+       <div >
+         <h3> Comanda : </h3>
+       </div>
+       <div class="content">
+            <div class="row">
+                <div class="col-md-12 col-lg-8">
+                    <div class="items" *ngFor="let item of (cart$|async).items">
+                        <div class="product">
+                            <div class="row">
+                                 <div class="col-md-3">
+                                    <img class="img-fluid mx-auto d-block image" src="{{item.picture}}">
+                                 </div>
+                                 <div class="col-md-8">
+                                    <div class="info">
+                                        <div class="row">
+                                            <div class="col-md-5 product-name">
+                                                <div class="product-name">
+                                                    <a routerLink="/shop/{{item.id}}">{{item.name}}</a>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 quantity">
+                                                <input readonly value="{{item.quantity}}" class="form-control quantity-input">
+                                            </div>
+                                            <div class="col-md-3 price">
+                                                <span>{{ item.price*item.quantity | currency: 'RON' : '' : '1.0-0'}}RON</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+        </div>
+    </div>
+</section>
+
+
+
+<div class="float-none d-flex justify-content-between flex-column flex-lg-row mb-5">
+    <button class="btn btn-outline-primary" cdkStepperPrevious>
+        <i class="fa fa-angle-left"></i>
+    </button>
+    <button (click)="submitOrder()" class="btn btn-primary">
+        Comanda!
+    </button>
+</div>

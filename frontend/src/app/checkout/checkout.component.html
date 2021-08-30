@@ -1,0 +1,34 @@
+<section class="shopping-cart dark" >
+    <div class="container" *ngIf="(cartTotal$|async) as total">
+       <div class="block-heading">
+         <h2>Plaseaza comanda</h2>
+       </div>
+       <div class="content">
+            <div class="row">
+                <div class="col-md-12 col-lg-8">
+                    
+                    <app-stepper [linearModeSelected]="false" #appStepper>
+                        <cdk-step [label]="'Adresa'" [completed]="checkoutForm.get('addressForm').valid">
+                            <app-checkout-address [checkoutForm]="checkoutForm"></app-checkout-address>
+                        </cdk-step>
+                        <cdk-step [label]="'Livrare'" [completed]="checkoutForm.get('deliveryForm').valid">
+                            <app-checkout-delivery [checkoutForm]="checkoutForm"></app-checkout-delivery>
+                        </cdk-step>
+                        <cdk-step [label]="'Rezumat'">
+                            <app-checkout-review [checkoutForm]="checkoutForm"></app-checkout-review>
+                        </cdk-step>
+                    </app-stepper>
+                  
+                </div>
+                <div class="col-md-12 col-lg-4">
+                    <div class="summary">
+                        <h3>Sumar comanda</h3>
+                        <div class="summary-item"><span class="text">Subtotal</span><span class="price">{{total.subtotal | currency: 'RON' : '' : '1.0-0'}} RON</span></div>
+                        <div class="summary-item"><span class="text">Livrare</span><span class="price">{{total.shipping | currency: 'RON' : '' : '1.0-0'}} RON</span></div>
+                        <div class="summary-item"><span class="text">Total</span><span class="price">{{total.total | currency: 'RON' : '' : '1.0-0'}} RON</span></div>
+                    </div>
+                </div>
+            </div> 
+        </div>
+    </div>
+</section>

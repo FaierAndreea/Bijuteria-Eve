@@ -2,6 +2,7 @@ using System.Text;
 using DAL;
 using DAL.Identity;
 using Entities.Identity;
+using Entities.Interfaces;
 using Entities.Repositories;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
@@ -44,8 +45,11 @@ namespace API
             });
 
             services.AddScoped<ITokenService, TokenService>();
+            services.AddScoped<IOrderService, OrderService>();
+            services.AddScoped(typeof(IGenericRepository<>), (typeof(GenericRepository<>)));
             services.AddScoped<IGemsRepository,GemsRepository>();
             services.AddScoped<ICartRepository, CartRepository>();
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
 
             var builder = services.AddIdentityCore<AppUser>();
             builder = new IdentityBuilder(builder.UserType, builder.Services);
