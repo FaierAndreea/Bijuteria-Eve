@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { filter } from 'rxjs/operators';
 import { CartService } from 'src/app/cart/cart.service';
-import { ICartModel } from 'src/app/Models/cartModel';
+import { ICartModel, ICartTotal } from 'src/app/Models/cartModel';
 import { IOrderExtended } from 'src/app/Models/IOrderModel';
 import { CheckoutService } from '../checkout.service';
 
@@ -16,11 +16,13 @@ import { CheckoutService } from '../checkout.service';
 export class CheckoutReviewComponent implements OnInit {
   @Input() checkoutForm: FormGroup;
   cart$: Observable<ICartModel>;
+  total$: Observable<ICartTotal>
 
   constructor(private cartService: CartService, private checkoutService: CheckoutService, private router: Router) { }
 
   ngOnInit(): void {
     this.cart$ = this.cartService.cart$.pipe(filter(c => !!c));
+    this.total$ = this.cartService.total$;
   }
 
   submitOrder() {

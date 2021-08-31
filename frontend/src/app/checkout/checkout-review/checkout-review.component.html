@@ -33,6 +33,32 @@
                             </div>
                         </div>
                     </div>
+                    <div class="items" *ngIf="(total$|async).subtotal > 9999">
+                        <div class="product">
+                            <div class="row">
+                                 <div class="col-md-3">
+                                    <img class="img-fluid mx-auto d-block image" src="../../../assets/images/foaieaur.jpg">
+                                 </div>
+                                 <div class="col-md-8">
+                                    <div class="info">
+                                        <div class="row">
+                                            <div class="col-md-5 product-name">
+                                                <div class="product-name">
+                                                    Foita de aur alimentara
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 quantity">
+                                                <input readonly value=1 class="form-control quantity-input">
+                                            </div>
+                                            <div class="col-md-3 price">
+                                                <span>0RON</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div> 
         </div>
