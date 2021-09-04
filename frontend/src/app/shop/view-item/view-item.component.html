@@ -1,7 +1,7 @@
-<div class="container mt-5">
+<div class="view-item">
     <div class="row" *ngIf="gem">
         <div class="col-6">
-            <img src="{{gem.picture}}" alt="{{gem.name}}" class="img-fluid w-100">
+            <img (click)="popup()" src="{{gem.picture}}" alt="{{gem.name}}" class="img-fluid w-100">
         </div>
         <div class="col-6">
             <h3>{{gem.name}}</h3>
@@ -21,4 +21,10 @@
         </div>
         
     </div>
+</div>
+
+<!-- The Modal -->
+<div id="myModal" class="modal" (click)="closePopup()">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="img01">
 </div>

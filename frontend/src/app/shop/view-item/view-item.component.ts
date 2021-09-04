@@ -38,4 +38,20 @@ export class ViewItemComponent implements OnInit {
     if(this.quantity>1) this.quantity--;
   }
 
+  popup() {
+    // var current = this.gem.picture;
+    // var url = prompt("change address to:", current);
+    // this.gem.picture = url;
+
+    var modal = document.getElementById("myModal");
+    var modalImg = document.getElementById("img01");
+    modal.style.display = "block";
+    (<HTMLImageElement>modalImg).src = this.gem.picture;
+  }
+
+  closePopup() {
+    var modal = document.getElementById("myModal");
+    modal.style.display = "none";
+  }
+
 }
