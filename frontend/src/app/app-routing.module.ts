@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DescriptionComponent } from './description/description.component';
 import { CheckoutGuard } from './guards/checkout.guard';
+import { OrderDetailsComponent } from './order-history/order-details/order-details.component';
+import { OrderHistoryComponent } from './order-history/order-history.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { PromoComponent } from './promo/promo.component';
 import { ShopComponent } from './shop/shop.component';
@@ -12,6 +14,8 @@ const routes: Routes = [
   {path: 'shop/:id', component: ViewItemComponent},
   {path: 'description', component: DescriptionComponent },
   {path: 'promo', component: PromoComponent},
+  {path: 'order-history', component: OrderHistoryComponent},
+  {path: 'order-history/:id', component: OrderDetailsComponent},
   {path: '', redirectTo:'shop', pathMatch: 'full'},
   {path: 'cart', loadChildren: ()=>import('./cart/cart.module').then(mod => mod.CartModule), data: {breadcrumb: 'Cart'}},
   {path: 'checkout', canActivate: [CheckoutGuard], loadChildren: ()=>import('./checkout/checkout.module').then(mod => mod.CheckoutModule), data: {breadcrumb: 'Checkout'}},

@@ -1,0 +1,20 @@
+<div class="history-page nope" *ngIf="!orders">
+    <p> Nu ai comandat nimic inca </p>
+</div>
+
+<div class="history-page" *ngIf="orders">
+    <div class="orders" *ngFor="let order of orders">
+        <div class="order-msg">
+            <span>
+                Comanda din {{order.orderDate|date}} 
+            </span>
+            <span> 
+                , total {{order.total| currency: 'RON' : '' : '1.0-0'}}RON 
+            </span>
+        </div>
+        <div class="details">
+            <a routerLink="/order-history/{{order.id}}" class="middle">Vezi detalii</a>
+        </div>
+    </div>
+
+</div>

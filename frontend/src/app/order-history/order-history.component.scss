@@ -1,0 +1,67 @@
+.history-page {
+    width: 100%; 
+    height: 100%; 
+    position: absolute; 
+    top: 0; 
+    left: 0;
+
+    padding-top: 10%;
+
+    background-image: url(../../assets/images/linedpaper.png);
+	background-repeat: repeat;
+}
+
+.nope {
+    margin-top: 200px;
+}
+
+.orders {
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
+    margin-bottom: 2%;
+
+    background-color: rgba(145, 221, 245, 0.705);
+    padding: 15px;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+.order-msg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+
+}
+
+.details {
+    margin-left: 40%;
+    padding-top: 10px;
+}
+
+a.middle
+{
+    font-size: 2vw;
+    color: black;
+    font-weight: bold;
+    position: relative;
+}
+
+a.middle:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: black;
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all 0.3s ease-in-out;
+}
+
+a.middle:hover:before {
+    visibility: visible;
+    transform: scaleX(1);
+}

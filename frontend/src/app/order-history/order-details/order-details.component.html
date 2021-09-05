@@ -1,0 +1,46 @@
+<div class="details-page">
+    <div class="details">
+        <h2> Detaliile Comenzii </h2>
+        <div>
+            <h3>Produsele: </h3>
+            <div class="items" *ngFor="let item of order.orderItems">
+                <!-- <img src="{{item.picture}}" class="img">
+                <a routerLink="/shop/{{item.id}}">{{item.name}}</a> -->
+                <div class="img-name">
+                    <img class="img-fluid image" src="{{item.picture}}">        
+                    <a class="name" routerLink="/shop/{{item.id}}">{{item.name}}</a>   
+                </div>
+                <input readonly value="{{item.quantity}}" class="form-control quantity-input">
+                <span class="price">{{ item.price*item.quantity | currency: 'RON' : '' : '1.0-0'}}RON</span>
+            </div>
+            <div class="items" *ngIf="order.subtotal > 9999">
+                <div class="img-name">
+                    <img class="img-fluid image" src="../../../assets/images/foaieaur.jpg">        
+                    <a class="name"> Foita de aur alimentara </a>   
+                </div>
+                <input readonly value="1" class="form-control quantity-input">
+                <span class="price price-0">0RON</span>
+            </div>
+        </div>
+        <div class="delivery">
+            <div class="livrare">
+                <h3>Livrare: </h3>
+                <div>
+                    <p>Nume: {{order.shipToAddress.firstName}} {{order.shipToAddress.lastName}}</p>
+                    <p>Oras: {{order.shipToAddress.city}}</p>
+                    <p>Strada: {{order.shipToAddress.street}}, nr {{order.shipToAddress.streetNumber}}</p>
+                </div>
+
+            </div>
+            <div class="cost">
+                <h3>Cost:</h3>
+                <div>
+                    <p>Subtotal: {{order.subtotal}}RON</p>
+                    <p>Livrare: {{order.shippingPrice}}RON</p>
+                    <p>Total: {{order.total}}RON</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

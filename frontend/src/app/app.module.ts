@@ -12,6 +12,7 @@ import { HomeModule } from './home/home.module';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown'
 import { PromoModule } from './promo/promo.module';
 import { TokenInterceptor } from './Interceptors/token.interceptor';
+import { OrderHistoryModule } from './order-history/order-history.module';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { TokenInterceptor } from './Interceptors/token.interceptor';
     HomeModule,
     PromoModule,
     PageNotFoundModule,
+    OrderHistoryModule,
     BsDropdownModule.forRoot()
   ],
   exports: [
